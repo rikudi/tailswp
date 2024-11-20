@@ -1,0 +1,40 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+
+# Node modules
+node_modules/
+
+# Build files
+/dist
+/build
+
+# Environment files
+.env
+.env.*
+
+# Composer
+/vendor
+
+# WordPress specific
+wp-config.php
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/cache/
+wp-content/backups/
+
+# Log files
+*.log
+
+# Keep package.json but ignore npm generated files
+package-lock.json
+yarn.lock
+.npm
+.yarn

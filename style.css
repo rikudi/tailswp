@@ -1,0 +1,446 @@
+/*
+Theme Name: TailsWP
+Theme URI: 
+Author: 
+Description: Custom WordPress theme
+Version: 1.0
+License: GNU General Public License v2 or later
+*/
+
+/* Reset and Base Styles */
+:root {
+    /* Typography Scale */
+    --h1-size: clamp(2rem, 5vw, 3.5rem);
+    --h2-size: clamp(1.75rem, 4vw, 3rem);
+    --h3-size: clamp(1.5rem, 3vw, 2.5rem);
+    --h4-size: clamp(1.25rem, 2vw, 2rem);
+    --body-size: clamp(1rem, 1.5vw, 1.125rem);
+    
+    /* Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    
+    /* Container Widths */
+    --container-max: 1200px;
+    --container-narrow: 800px;
+
+/* Theme Colors - Dynamic Palette System */
+--color-primary: #007bff;
+--color-primary-light: #3395ff;
+--color-primary-dark: #0056b3;
+--color-secondary: #6c757d;
+--color-secondary-light: #868e96;
+--color-secondary-dark: #343a40;
+--color-background: #ffffff;
+--color-text: #333333;
+--color-accent: #28a745;
+--color-accent-dark: #1e7e34;
+}
+
+/* Box Sizing Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    font-size: var(--body-size);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--space-sm);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+h4 { font-size: var(--h4-size); }
+
+p, ul, ol {
+    margin-bottom: var(--space-md);
+}
+
+/* Links */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+.container-narrow {
+    max-width: var(--container-narrow);
+}
+
+/* Header Styles */
+.elementor-section-wrap > .elementor-section:first-child,
+.site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 1rem 0;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-background);
+}
+
+/* Make sure header content is properly aligned */
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 0.5rem 0;
+    }
+}
+
+/* Navigation */
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+}
+
+.main-navigation a {
+    padding: var(--space-xs) var(--space-sm);
+}
+
+.main-navigation a:hover {
+    color: var(--ash-gray);
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: currentColor;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-navigation .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--walnut-brown);
+        padding: 1rem 0;
+    }
+    
+    .main-navigation.nav-open .nav-menu {
+        display: block;
+    }
+    
+    .main-navigation .nav-menu li {
+        display: block;
+        margin: 0;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Hamburger menu animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+/* Buttons */
+.button,
+.wp-block-button__link {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover,
+.wp-block-button__link:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: var(--golden-oak);
+}
+
+.button-outline {
+    background-color: transparent;
+    border: 2px solid var(--maple-syrup);
+    color: var(--maple-syrup);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--walnut-brown);
+    border-radius: 4px;
+    background-color: white;
+    margin-bottom: var(--space-sm);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--maple-syrup);
+    box-shadow: 0 0 0 2px rgba(210, 105, 30, 0.2);
+}
+
+/* WordPress Specific */
+.wp-block-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.entry-content {
+    margin-top: var(--space-lg);
+}
+
+.entry-meta {
+    color: var(--walnut-brown);
+    font-size: 0.9em;
+}
+
+/* Sidebar */
+.sidebar {
+    padding: var(--space-md);
+    background-color: white;
+    border-radius: 4px;
+}
+
+.widget {
+    margin-bottom: var(--space-lg);
+}
+
+.widget-title {
+    color: var(--oxblood);
+    border-bottom: 2px solid var(--golden-oak);
+    padding-bottom: var(--space-xs);
+}
+
+/* Footer */
+.site-footer {
+    padding: var(--space-xl) 0;
+    margin-top: var(--space-xl);
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    border-radius: 4px;
+    padding: var(--space-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid System */
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mt-1 { margin-top: var(--space-sm); }
+.mt-2 { margin-top: var(--space-md); }
+.mt-3 { margin-top: var(--space-lg); }
+.mb-1 { margin-bottom: var(--space-sm); }
+.mb-2 { margin-bottom: var(--space-md); }
+.mb-3 { margin-bottom: var(--space-lg); }
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    :root {
+        --container-max: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --container-max: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-max: 540px;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accessibility */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .site-header,
+    .site-footer,
+    .sidebar {
+        display: none;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+}
+
+/* Elementor Compatibility */
+.elementor-page .site-header,
+.elementor-page .site-footer {
+    display: block;
+}
+
+.elementor-page.elementor-template-canvas .site-header,
+.elementor-page.elementor-template-canvas .site-footer {
+    display: none;
+}
+
+.elementor-page .entry-content {
+    margin: 0;
+}
+
+/* Fix for Elementor full-width */
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: var(--container-max);
+}
+
+/* Fix for Elementor editing mode */
+.elementor-add-section {
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+/* Container Width Control */
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: var(--container-max, 1200px) !important;
+}
+
+/* Prevent full-width stretch by default */
+.elementor-section-wrap > .elementor-section {
+    max-width: var(--container-max, 1200px);
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Only allow full-width when specifically set */
+.elementor-section.elementor-section-stretched {
+    max-width: 100% !important;
+}
+
+/* Heading containers control */
+.elementor-widget:not(.elementor-widget-container) {
+    max-width: var(--container-max, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Keep full-width sections when needed */
+.elementor-section-full_width {
+    max-width: 100% !important;
+}

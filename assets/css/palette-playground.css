@@ -1,0 +1,101 @@
+/* Palette Playground Styles */
+.palette-playground {
+    max-width: var(--container-max);
+    margin: var(--space-lg) auto;
+    padding: 0 var(--space-sm);
+}
+
+.current-palette {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px -1px rgba(21, 21, 21, 0.179);
+    border-radius: 1rem;
+    padding: var(--space-lg);
+    
+    margin-bottom: var(--space-xl);
+    border: 3px solid rgba(var(--color-text), 0.8);
+}
+
+.color-swatch {
+    transition: transform 0.2s;
+}
+
+
+.color-preview {
+    height: 3rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.color-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-top-left-radius: 0.5rem;
+}
+
+.palette-card {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px -1px rgba(21, 21, 21, 0.179);
+    border: 1px solid rgba(var(--color-text), 0.1);
+    border-radius: 1rem;
+    padding: var(--space-md);
+    transition: all 0.3s ease;
+}
+
+.palette-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(var(--color-text), 0.1);
+}
+
+.preview-section {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.apply-button {
+    background: var(--color-primary);
+    color: var(--color-background);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0.5rem;
+    width: 100%;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.apply-button:hover:not(:disabled) {
+    background: var(--color-accent);
+    transform: translateY(-1px);
+}
+
+.apply-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.preview-elements {
+    border: 1px solid rgba(var(--color-text), 0.1);
+    border-radius: 0.5rem;
+    margin: var(--space-sm) 0;
+}
+
+.active-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-accent);
+    color: var(--color-background);
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    margin-left: var(--space-xs);
+}
+
+/* Additional utility classes */
+.color-primary { color: var(--color-primary); }
+.bg-primary { background-color: var(--color-primary); }
+.color-secondary { color: var(--color-secondary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.color-accent { color: var(--color-accent); }
+.bg-accent { background-color: var(--color-accent); }

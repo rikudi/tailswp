@@ -1,0 +1,11 @@
+
+{
+  "name": "custom-wooden",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind-output.css --watch",
+    "build": "npx tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind-output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}

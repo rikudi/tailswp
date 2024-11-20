@@ -1,0 +1,58 @@
+/* Landing Page Introduction Styles */
+.bg-primary-700 {
+    background-color: var(--color-primary);
+}
+
+.hover\:bg-primary-800:hover {
+    background-color: var(--color-primary-light);
+}
+
+.focus\:ring-primary-300:focus {
+    box-shadow: 0 0 0 4px var(--color-accent);
+}
+
+.dark\:focus\:ring-primary-900:focus {
+    box-shadow: 0 0 0 4px var(--color-accent-dark);
+}
+
+.text-gray-900 {
+    color: var(--color-text);
+}
+
+.border-gray-300 {
+    border-color: var(--color-secondary);
+}
+
+.hover\:bg-gray-100:hover {
+    background-color: var(--color-secondary-light);
+}
+
+.focus\:ring-gray-100:focus {
+    box-shadow: 0 0 0 4px var(--color-secondary-light);
+}
+
+.dark\:text-white {
+    color: var(--color-background);
+}
+
+.dark\:border-gray-600 {
+    border-color: var(--color-secondary-dark);
+}
+
+.dark\:hover\:bg-gray-700:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.dark\:focus\:ring-gray-700:focus {
+    box-shadow: 0 0 0 4px var(--color-secondary-dark);
+}
+
+/* Feature Cards Styles */
+.feature-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
